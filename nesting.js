@@ -79,7 +79,7 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 function removeDuplicates(arr) {
     for (let i = 0; i < arr.length; i++) {
         for (let j = i + 1; j < arr.length; j++) {
-            if (arr[j] == arr[i]) {
+            if (arr[j] === arr[i]) {
                 arr.splice(i, 1);
                 i--;
             }
@@ -192,7 +192,7 @@ function looper(arr) {
     for (let i = 0; i < arr.length; i++) {
         newArr = newArr.concat(arr[i]);
     }
-    console.log(newArr);
+
     for (let i = 0; i < newArr.length; i++) {
         if (newArr[i] % 2 === 0) {
             newArr[i] = 'even';
@@ -200,6 +200,7 @@ function looper(arr) {
             newArr[i] = 'odd';
         }
     }
+    console.log(newArr);
     return newArr;
 }
 console.log(looper(numsArr));

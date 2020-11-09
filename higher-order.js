@@ -159,45 +159,23 @@ const purchases = [
     { owner: 'Barry', price: 109 },
     { owner: 'Bob', price: 115 },
 ];
+
 // Do not edit the code above.
 
 /*
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-// TODO - maybe begin with a key in obj, then do something else; maybe pass it in
-
-let bobsTotal = purchases.filter(purchase => {
-    return purchase.owner === 'Bob';
-});
+let bobsTotal = purchases
+    .filter(purchase => {
+        return purchase.owner === 'Bob';
+    })
+    .map(price => {
+        let sum = 0;
+        sum += price.price;
+        return sum;
+    })
+    .reduce((acc, cur) => {
+        return acc + cur;
+    });
 console.log(bobsTotal);
-
-// let total = bobsTotal.map(total => {
-//     let arr = [];
-//     let tots = total.price + total.price;
-//     console.log(tots);
-//     arr.push(tots);
-
-//     let totstots;
-//     for (let i = 0; i < tots.length; i++) {
-//         console.log(tots[i]);
-//         tottots += tots[i];
-//     }
-//     return totstots;
-// });
-// console.log(total);
-
-// TODO why can't I destructure here?
-
-// TODO try key in obj
-// let { price } = bobsTotal;
-// console.log(price);
-
-let val = bobsTotal.reduce((acc, cur) => {
-    return {
-        price: acc.price + cur.price,
-    };
-});
-console.log(val);
-let { price } = val;
-console.log(price);

@@ -48,3 +48,4 @@ let arr1 = ['dog', 'chameleon', 'monkey'];
 let arr2 = ['bear', 'tiger', 'liger'];
 
 let combinedArrays = [...arr1, ...arr2];
+console.log(combinedArrays);
